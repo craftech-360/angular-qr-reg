@@ -22,4 +22,5 @@ export class QrScannerComponent {
     alert(e[0].value)
   }
 
+  
 }

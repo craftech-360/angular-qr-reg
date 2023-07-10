@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 import { FormComponent } from './form/form.component';
+import { AngularFireModule } from '@angular/fire/compat'; // Modified import statement
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,10 @@ import { FormComponent } from './form/form.component';
     AppRoutingModule,
     ReactiveFormsModule,
     NgxScannerQrcodeModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
